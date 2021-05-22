@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <NavBar></NavBar>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/e1">Example 1</router-link> |
@@ -10,14 +11,13 @@
 </template>
 
 <script>
-import FrontPageView from "./views/FrontPageView.vue";
 import NavBar from "./components/NavBar";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    FrontPageView,
+
   },
 };
 </script>
