@@ -1,13 +1,6 @@
 <template>
   <div id="app">
     <NavBar></NavBar>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/oddaja">Ustvari dostavo</router-link> |
-      <router-link to="/e1">Example 1</router-link> |
-      <router-link to="/e2">Example 2</router-link> |
-      <router-link to="prejmi">Prejmi</router-link>
-    </div>
     <router-view />
   </div>
 

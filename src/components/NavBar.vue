@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item m-1">
-                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/">Naredi dostavo</router-link>
+                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/oddaja">Naredi dostavo</router-link>
                 </li>
                 <li class="nav-item m-1">
-                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/e1/">Poišči pakete</router-link>
+                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/">Poišči pakete</router-link>
                 </li>
                 <li class="nav-item m-1">
-                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/e1/">Potrdi paket</router-link>
+                    <router-link style="color: white; background-color: #c30909" class="nav-link" to="/prejmi">Potrdi paket</router-link>
                 </li>
 
             </ul>
