@@ -17,10 +17,19 @@ Map
 
 <script>
 import Card from "../components/Card";
+import HereMap from '../components/HereMap';
+
 export default {
   name: "FrontPageView",
   components: {
     Card,
+    HereMap,
   },
+  mounted() {
+    let map = this.$refs.map;
+    map.dropMarker("Los Banos, CA" );
+  },
+
+
 };
 </script>
