@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <FrontPageView />
+    <router-link to="/">Home</router-link>
+    <router-link to="/e1">Example1</router-link>
+    <router-link to="/e2">Example2</router-link>
   </div>
 </template>
 
 <script>
-import FrontPageView from "./views/FrontPageView.vue";
-
 export default {
   name: "App",
-  components: {
-    FrontPageView,
-  },
 };
 </script>
 
