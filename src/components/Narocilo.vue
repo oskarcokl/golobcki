@@ -1,9 +1,9 @@
 <template>
-  <div class="narocilo">
-    <div class="card-image-container">
+  <div class="narocilo row">
+    <div class="card-image-container col-sm-6">
       <img class="card-image" src="../../public/avatar.png" alt="" />
     </div>
-    <div>
+    <div class="data col-sm-6">
       <p class="name">Ime paketa</p>
       <input v-model="message" placeholder="Knijga">
       <p class="velikost">Velikost paketa</p>
@@ -36,11 +36,14 @@ export default {
   color: #6f6f6f;
 }
 .card-image {
-  width: 150px;
+  width: 300px;
   height: auto;
   border-style: solid;
   border-width: 5px;
   border-color: #6f6f6f;
+}
+.card-image-container{
+  text-align: right;
 }
 .gumb{
   color: #ffffff;
@@ -49,5 +52,8 @@ export default {
   border-style: solid;
   border-width: 5px;
   border-color: #c30909;
+}
+.data{
+  text-align: left;
 }
 </style>
