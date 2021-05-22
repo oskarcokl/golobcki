@@ -56,4 +56,9 @@ export default {
 .data{
   text-align: left;
 }
+input, select{
+  background-color: #c4c4c4;
+  border: 0 solid;
+  color: #6f6f6f;
+}
 </style>
