@@ -1,7 +1,17 @@
 <template>
   <div class="container">
-    <h1>Hello welcome to Golobcki</h1>
-    <card />
+
+    <div class="row">
+      <div class="col-4">
+        <Card/>
+        <Card/>
+        <Card/>
+      </div>
+      <div class="col-8">
+Map
+      </div>
+    </div>
+
   </div>
 </template>
 
