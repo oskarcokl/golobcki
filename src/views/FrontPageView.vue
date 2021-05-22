@@ -4,6 +4,11 @@
     <card />
     <HereMap
         ref="map"
+        lat="46.063747"
+        lng="14.493638"
+        latDo="46.043085"
+        lngDo="14.462140"
+
     />
   </div>
 </template>
@@ -17,11 +22,7 @@ export default {
   components: {
     Card,
     HereMap,
-  },
-  mounted() {
-    let map = this.$refs.map;
-    map.dropMarker("Los Banos, CA" );
-  },
+  }
 
 
 };
