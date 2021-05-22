@@ -2,13 +2,13 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-4">
-        <Card/>
-        <Card/>
-        <Card/>
+      <div class="col-lg-5 ">
+        <Card button-txt="cringe" />
       </div>
-      <div class="col-8">
-Map
+      <div class="col-lg-7">
+        <HereMap
+                ref="map"
+        />
       </div>
     </div>
 
