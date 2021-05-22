@@ -10,28 +10,39 @@
 export default {
   name: "HereMap",
   props: {
-    center: Object
+    center: Object,
+    lat: String,
+    lng: String,
+    latDo: String,
+    lngDo: String,
     // center object { lat: 40.730610, lng: -73.935242 }
   },
   data() {
     return {
       platform: null,
-      apikey: "RI37PN-FCrvKglbg1-ovuMSC94R_cw8VLJUnv2VErgM",
+      //apikey: "RI37PN-FCrvKglbg1-ovuMSC94R_cw8VLJUnv2VErgM",
+      apikey: "_dztcB_rxZutvT1ZVeMHRvFcCci54cNZeYvrE2QamZ4",
       // You can get the API KEY from developer.here.com
       map: {},
-      geocodingService: {}
     };
   },
   created() {
     // Initialize the platform object:
-    const platform = new window.H.service.Platform({
+    this.platform = new window.H.service.Platform({
       apikey: this.apikey
     });
-    this.platform = platform;
-    this.geocodingService = this.platform.getGeocodingService();
   },
-  async mounted() {
+  mounted() {
     this.initializeHereMap();
+
+
+    const H = window.H;
+    var pigio = new H.map.Icon('../../vektor.png'),
+    odhod = new H.map.Marker({lat: this.lat, lng: this.lng});
+    var prihod = new H.map.Marker({lat: this.latDo, lng: this.lngDo }, {icon: pigio });
+    this.map.addObject(odhod);
+    this.map.addObject(prihod);
+
   },
   methods: {
     initializeHereMap() { // rendering map
@@ -43,9 +54,9 @@ export default {
 
       // Instantiate (and display) a map object:
       this.map = new H.Map(mapContainer, maptypes.vector.normal.map, {
-        zoom: 10,
+        zoom: 13,
         //center: this.center,
-        center: { lat: 46.051186, lng: 14.507702 }
+        center: { lat: this.lat, lng: this.lng }
       });
 
       addEventListener("resize", () => this.map.getViewPort().resize());
@@ -60,15 +71,29 @@ export default {
 
     dropMarker(query){
       this.geocodingService.geocode({searchText: query }, data => {
-        console.log(data);
+        if(data.Response.View.length > 0){
+          if(data.Response.View[0].Result.length > 0){
+            let position = data.Response.View[0].Result[0].Location.DisplayPosition;
+            console.log(position);
+            const H = window.H;
+            let marker = new H.map.Marker({
+              lat: this.lat,
+              lng: this.lng });
+            this.map.addObject(marker);
+          }
+
+        }
       }, error => {
         console.log(error);
       });
-      /*const H = window.H;
+      /*
+      const H = window.H;
       let marker = new H.map.Marker({
-            lat: position.Latitude,
-            lng: position.Longitude });
-      this.map.addObject(marker);*/
+        lat: position.Latitude,
+        lng: position.Longitude });
+      this.map.addObject(marker);
+      */
+
     }
   }
 };
