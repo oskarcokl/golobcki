@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <NavBar></NavBar>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/oddaja">Ustvari dostavo</router-link> |
@@ -9,13 +10,32 @@
   </div>
 </template>
 
+<script>
+import NavBar from "./components/NavBar";
+
+export default {
+  name: "App",
+  components: {
+    NavBar,
+
+  },
+};
+</script>
+
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #6f6f6f;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 #nav {
