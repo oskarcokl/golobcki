@@ -16,6 +16,12 @@
         </ul>
       </div>
     </div>
+    <div>
+      <p class="card-id-number">Id paketa: 351978231846540</p>
+    </div>
+    <div class="verification-number">
+      <span>Potrdila koda: 4269</span>
+    </div>
   </div>
 </template>
 
@@ -31,8 +37,21 @@ export default {
   text-align: left;
   display: inline-block;
   width: 400px;
-  padding: 10px, 5px;
+  padding: 10px 5px;
   border: 5px solid #6f6f6f;
+}
+
+@media only screen and (max-width: 500px) {
+  .card-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .order-information-list {
@@ -53,5 +72,18 @@ export default {
   width: 100px;
   border: 5px solid #6f6f6f;
   height: auto;
+}
+
+.card-id-number {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+.verification-number {
+  color: #c30909;
+  font-size: 2em;
+  margin-left: 5%;
 }
 </style>
