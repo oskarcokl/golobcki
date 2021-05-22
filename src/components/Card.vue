@@ -16,17 +16,21 @@
         </ul>
       </div>
     </div>
-    <div>
+    <div v-if="buttonTxt" class="card-button-container">
+      <button class="card-button">Prevezemi!</button>
+    </div>
+    <div v-if="idPaketa">
       <p class="card-id-number">Id paketa: 351978231846540</p>
     </div>
-    <div class="verification-number">
-      <span>Potrdila koda: 4269</span>
+    <div v-if="koda" class="verification-number">
+      <span>Potrdilna koda: 4269</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["idPaketa", "koda", "buttonTxt"],
   name: "Card",
 };
 </script>
@@ -47,6 +51,20 @@ export default {
     margin: 0;
     padding: 0;
   }
+}
+
+.card-button {
+  background-color: #e06d6d;
+  border: 3px solid #c30909;
+  color: white;
+  padding: 5px 4px;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-left: 65%;
+}
+
+.card-button:hover {
+  cursor: pointer;
 }
 
 .card-title {
