@@ -2,6 +2,7 @@
   <div id="app">
     <FrontPageView />
   </div>
+
 </template>
 
 <script>
@@ -13,6 +14,8 @@ export default {
     FrontPageView,
   },
 };
+
+
 </script>
 
 <style>
