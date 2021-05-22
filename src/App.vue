@@ -9,6 +9,19 @@
   </div>
 </template>
 
+<script>
+import FrontPageView from "./views/FrontPageView.vue";
+import NavBar from "./components/NavBar";
+
+export default {
+  name: "App",
+  components: {
+    NavBar,
+    FrontPageView,
+  },
+};
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
