@@ -1,7 +1,7 @@
 <template>
   <div class="narocilo row">
     <div class="card-image-container col-sm-6 ">
-      <div class="ree">
+      <div class="ree float-lg-right">
       <img class="card-image float-lg-right img-fluid" src="../../public/avatar.png" alt="" />
       </div>
     </div>
