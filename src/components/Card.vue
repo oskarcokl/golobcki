@@ -9,7 +9,7 @@
         />
       </div>
       <div class="col-lg-8">
-        <h2 class="h2">Vrnitev ključev</h2>
+        <h2 class="h2">Spraj za zombije</h2>
         <ul class="order-information-list">
           <li class="order-information-item">Manjši paket</li>
           <li class="order-information-item">Ljubljana, Vodnikova 6</li>

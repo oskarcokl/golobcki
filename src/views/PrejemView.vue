@@ -6,7 +6,7 @@
       </div>
       <div class="prejem-info">
         <ul class="prejem-info-list">
-          <li class="prejem-info-list-item">Grafična kartica</li>
+          <li class="prejem-info-list-item">Spraj za zombije</li>
           <li class="prejem-info-list-item">Majhen paket</li>
           <li class="prejem-info-list-item">Ulica ivane kobilce 4</li>
           <li class="prejem-info-list-item">Vodnikova 6</li>
