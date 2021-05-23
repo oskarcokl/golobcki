@@ -1,4 +1,3 @@
-
 <template>
   <div id="map">
     <!--In the following div the HERE Map will render-->
@@ -29,23 +28,25 @@ export default {
   created() {
     // Initialize the platform object:
     this.platform = new window.H.service.Platform({
-      apikey: this.apikey
+      apikey: this.apikey,
     });
   },
-  mounted() {
+  async mounted() {
     this.initializeHereMap();
 
-
     const H = window.H;
-    var pigio = new H.map.Icon('../../vektor.png'),
-    odhod = new H.map.Marker({lat: this.lat, lng: this.lng});
-    var prihod = new H.map.Marker({lat: this.latDo, lng: this.lngDo }, {icon: pigio });
+    var pigio = new H.map.Icon("../../vektor.png"),
+      odhod = new H.map.Marker({ lat: this.lat, lng: this.lng });
+    var prihod = new H.map.Marker(
+      { lat: this.latDo, lng: this.lngDo },
+      { icon: pigio }
+    );
     this.map.addObject(odhod);
     this.map.addObject(prihod);
-
   },
   methods: {
-    initializeHereMap() { // rendering map
+    initializeHereMap() {
+      // rendering map
 
       const mapContainer = this.$refs.hereMap;
       const H = window.H;
@@ -56,7 +57,7 @@ export default {
       this.map = new H.Map(mapContainer, maptypes.vector.normal.map, {
         zoom: 13,
         //center: this.center,
-        center: { lat: this.lat, lng: this.lng }
+        center: { lat: this.lat, lng: this.lng },
       });
 
       addEventListener("resize", () => this.map.getViewPort().resize());
@@ -69,23 +70,28 @@ export default {
       // End rendering the initial map
     },
 
-    dropMarker(query){
-      this.geocodingService.geocode({searchText: query }, data => {
-        if(data.Response.View.length > 0){
-          if(data.Response.View[0].Result.length > 0){
-            let position = data.Response.View[0].Result[0].Location.DisplayPosition;
-            console.log(position);
-            const H = window.H;
-            let marker = new H.map.Marker({
-              lat: this.lat,
-              lng: this.lng });
-            this.map.addObject(marker);
+    dropMarker(query) {
+      this.geocodingService.geocode(
+        { searchText: query },
+        (data) => {
+          if (data.Response.View.length > 0) {
+            if (data.Response.View[0].Result.length > 0) {
+              let position =
+                data.Response.View[0].Result[0].Location.DisplayPosition;
+              console.log(position);
+              const H = window.H;
+              let marker = new H.map.Marker({
+                lat: this.lat,
+                lng: this.lng,
+              });
+              this.map.addObject(marker);
+            }
           }
-
+        },
+        (error) => {
+          console.log(error);
         }
-      }, error => {
-        console.log(error);
-      });
+      );
       /*
       const H = window.H;
       let marker = new H.map.Marker({
@@ -93,9 +99,8 @@ export default {
         lng: position.Longitude });
       this.map.addObject(marker);
       */
-
-    }
-  }
+    },
+  },
 };
 </script>
 
