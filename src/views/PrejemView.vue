@@ -16,11 +16,21 @@
     </div>
     <div class="potrdilo-enter-container">
       <p>Potrdilna številka:</p>
-      <input type="text" />
-      <button>Potrdi prejem paketa</button>
+      <input type="number" />
+      <button v-on:click="handleClick">Potrdi prejem paketa</button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    handleClick() {
+      this.$router.push("/");
+    },
+  },
+};
+</script>
 
 <style scoped>
 .prejem-info-list {

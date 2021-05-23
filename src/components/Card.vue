@@ -1,10 +1,12 @@
 <template>
-
   <div class="card-container mb-2" style="">
     <div class="row">
-
       <div class="col-lg-4 ">
-        <img class="img-fluid card-image" src="../../public/avatar.png" alt="" />
+        <img
+          class="img-fluid card-image"
+          src="../../public/avatar.png"
+          alt=""
+        />
       </div>
       <div class="col-lg-8">
         <h2 class="h2">Vrnitev ključev</h2>
@@ -17,15 +19,14 @@
           <li class="order-information-item">5€</li>
         </ul>
       </div>
-
     </div>
 
-
     <div class="row">
-
       <div class="col-lg-4">
         <div v-if="buttonTxt" class="card-button-container">
-          <button class="card-button">Prevezemi!</button>
+          <button class="card-button" v-on:click="$emit('clicked')">
+            Prevezemi!
+          </button>
         </div>
       </div>
       <div class="col-lg-4">
@@ -38,11 +39,8 @@
           <span>Potrdilna koda: 4269</span>
         </div>
       </div>
-
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -53,39 +51,37 @@ export default {
 </script>
 
 <style scoped>
+.order-information-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.order-information-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.card-container {
+  background-color: #e9e9e9;
+  text-align: left;
+  padding: 10px 5px;
+  border: 5px solid #6f6f6f;
+}
 
-  .order-information-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .order-information-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .card-container {
-    background-color: #e9e9e9;
-    text-align: left;
-    padding: 10px 5px;
-    border: 5px solid #6f6f6f;
-  }
+.card-image {
+  border: 5px solid #6f6f6f;
+}
 
-  .card-image {
-    border: 5px solid #6f6f6f;
-  }
+.card-button {
+  background-color: #e06d6d;
+  border: 3px solid #c30909;
+  color: white;
+  padding: 5px 4px;
+  font-size: 1.3em;
+  font-weight: 500;
+}
 
-
-  .card-button {
-    background-color: #e06d6d;
-    border: 3px solid #c30909;
-    color: white;
-    padding: 5px 4px;
-    font-size: 1.3em;
-    font-weight: 500;
-  }
-
-  /*
+/*
 .card-container {
   background-color: #e9e9e9;
   text-align: left;
@@ -156,15 +152,15 @@ export default {
 }
 
    */
-  .verification-number {
-    color: #c30909;
-    font-size: 2em;
-    margin-left: 5%;
-  }
-  .card-id-number {
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-left: 5%;
-    margin-top: 10px;
-  }
+.verification-number {
+  color: #c30909;
+  font-size: 2em;
+  margin-left: 5%;
+}
+.card-id-number {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-left: 5%;
+  margin-top: 10px;
+}
 </style>

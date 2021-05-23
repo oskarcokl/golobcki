@@ -2,13 +2,17 @@
   <div class="narocilo row">
     <div class="card-image-container col-sm-6 ">
       <div class="ree float-lg-right">
-      <img class="card-image float-lg-right img-fluid" src="../../public/avatar.png" alt="" />
+        <img
+          class="card-image float-lg-right img-fluid"
+          src="../../public/avatar.png"
+          alt=""
+        />
       </div>
     </div>
     <div class="data col-sm-6">
       <div class="float-lg-left text-sm-left">
         <p class="name">Ime paketa</p>
-        <input v-model="message" placeholder="Knijga">
+        <input v-model="message" placeholder="Knijga" />
         <p class="velikost">Velikost paketa</p>
         <select v-model="selected">
           <option disabled value="">Izberite velikost</option>
@@ -16,14 +20,16 @@
           <option>Velik ( ͡° ͜ʖ ͡°)</option>
         </select>
         <p class="prevzem">Lokacija prevzema</p>
-        <input v-model="message" placeholder="Ljubljana, Svetčeva 9">
+        <input v-model="message" placeholder="Ljubljana, Svetčeva 9" />
         <p class="oddaja">Lokacija oddaje</p>
-        <input v-model="message" placeholder="Ljubljana, Tržaška 7">
+        <input v-model="message" placeholder="Ljubljana, Tržaška 7" />
         <p class="cena">Plačilo</p>
-        <input type="number" v-model="message" placeholder="5€">
-        <br>
-        <br>
-        <button class="gumb">Oddaj dostavo</button>
+        <input type="number" v-model="message" placeholder="5€" />
+        <br />
+        <br />
+        <button v-on:click="$emit('clicked')" class="gumb">
+          Oddaj dostavo
+        </button>
       </div>
     </div>
   </div>
@@ -31,12 +37,12 @@
 
 <script>
 export default {
-  name: "Narocilo"
-}
+  name: "Narocilo",
+};
 </script>
 
 <style scoped>
-.narocilo{
+.narocilo {
   color: #6f6f6f;
 }
 .card-image {
@@ -45,18 +51,19 @@ export default {
   border-color: #6f6f6f;
 }
 
-.gumb{
+.gumb {
   color: #ffffff;
-  background-color: #e06D6D;
+  background-color: #e06d6d;
   font-size: 30px;
   border-style: solid;
   border-width: 5px;
   border-color: #c30909;
 }
-.ree{
+.ree {
   max-width: 300px;
 }
-input, select{
+input,
+select {
   background-color: #c4c4c4;
   border: 0 solid;
   color: #6f6f6f;
